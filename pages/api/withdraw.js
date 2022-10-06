@@ -26,9 +26,9 @@ export default function withdrawRoute(req, res) {
         .json({ ok: false, message: "Amount must be greater than 0" });
     }
     const users = readUsersDB();
-    const userbalance = users.find((x) => x.username === user.username);
+    const userba = users.find((x) => x.username === user.username);
 
-    if (userbalance.money < amount)
+    if (userba.money < amount)
       return res
         .status(400)
         .json({ ok: false, message: "You do not has enough money" });

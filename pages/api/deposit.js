@@ -27,10 +27,10 @@ export default function depositRoute(req, res) {
 
     //find and update money in DB
     const users = readUsersDB();
-    const userbalance = users.find((x) => x.username === user.username);
+    const userba = users.find((x) => x.username === user.username);
     userbalance.money += amount;
     writeUsersDB(users);
-    return res.status(200).json({ ok: true, money: userbalance.money });
+    return res.status(200).json({ ok: true, money: userba.money });
 
     //return response
   } else {
